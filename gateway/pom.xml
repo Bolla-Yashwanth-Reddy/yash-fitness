@@ -27,8 +27,10 @@
 		<url/>
 	</scm>
 	<properties>
-		<java.version>23</java.version>
+		<java.version>17</java.version>
+		<maven.compiler.release>${java.version}</maven.compiler.release>
 		<spring-cloud.version>2024.0.0</spring-cloud.version>
+		<lombok.version>1.18.40</lombok.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -56,6 +58,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -73,6 +76,19 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${lombok.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

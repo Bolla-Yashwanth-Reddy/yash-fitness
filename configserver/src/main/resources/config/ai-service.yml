@@ -30,5 +30,5 @@ rabbitmq:
 
 gemini:
   api:
-    url: ${GEMINI_API_URL}
-    key: ${GEMINI_API_KEY}
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent
+    key: AIzaSyDXUYa1zLukXlG2xsdO-IC4wnFt5m4fUNw
